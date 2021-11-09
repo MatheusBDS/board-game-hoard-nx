@@ -1,27 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { Message } from '@bghoard/api-interfaces';
+/* eslint-disable @nrwl/nx/enforce-module-boundaries */
+import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { ReviewFeatureDetails } from '@bghoard/review/feature-details';
+import { ReviewFeatureList } from '@bghoard/review/feature-list';
 
 export const App = () => {
-  const [m, setMessage] = useState<Message>({ message: '' });
-
-  useEffect(() => {
-    fetch('/api')
-      .then((r) => r.json())
-      .then(setMessage);
-  }, []);
-
   return (
-    <>
-      <div style={{ textAlign: 'center' }}>
-        <h1>Welcome to review!</h1>
-        <img
-          width="450"
-          src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
-          alt="Nx - Smart, Extensible Build Framework"
+    <BrowserRouter basename="/review">
+        <h1 style={{ textAlign: 'center' }}>Board Game Hoard: Review</h1>
+        <Route exact path="/" render={() => <ReviewFeatureList />} />
+        <Route
+          path="/:game"
+          render={({match}: any) => (
+            <ReviewFeatureDetails gameId={match.params.game} />
+          )}
         />
-      </div>
-      <div>{m.message}</div>
-    </>
+      </BrowserRouter>
   );
 };
 
