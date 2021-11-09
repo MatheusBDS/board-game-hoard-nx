@@ -1,0 +1,23 @@
+{
+  "root": "libs/shared/util-formatters",
+  "sourceRoot": "libs/shared/util-formatters/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/shared/util-formatters/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/util-formatters"],
+      "options": {
+        "jestConfig": "libs/shared/util-formatters/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

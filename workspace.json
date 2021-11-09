@@ -7,10 +7,16 @@
     "review-data-access-games": "libs/review/data-access-games",
     "review-e2e": "apps/review-e2e",
     "review-feature-details": "libs/review/feature-details",
-    "review-feature-list": "libs/review/feature-list",
-    "review-ui-title": "libs/review/ui-title",
-    "review-util-formatters": "libs/review/util-formatters",
+    "shared-assets": "libs/shared/assets",
+    "shared-ui-tile": "libs/shared/ui-tile",
+    "shared-util-formatters": "libs/shared/util-formatters",
     "store": "apps/store",
-    "store-e2e": "apps/store-e2e"
+    "store-data-access-cart": "libs/store/data-access-cart",
+    "store-data-access-games": "libs/store/data-access-games",
+    "store-e2e": "apps/store-e2e",
+    "store-feature-cart": "libs/store/feature-cart",
+    "store-feature-details": "libs/store/feature-details",
+    "store-feature-list": "libs/store/feature-list",
+    "store-ui-formatters": "libs/store/ui-formatters"
   }
 }

@@ -1,0 +1,24 @@
+{
+  "root": "libs/shared/ui-tile",
+  "sourceRoot": "libs/shared/ui-tile/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/shared/ui-tile/**/*.ts"],
+        "exclude": ["**/node_modules/**", "!libs/shared/ui-tile/**"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/ui-tile"],
+      "options": {
+        "jestConfig": "libs/shared/ui-tile/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,6 +1,6 @@
 import { Review } from '@bghoard/api-interfaces';
 import { useGames } from '@bghoard/review/data-access-games';
-import { currencyFormat, ratingFormat } from '@bghoard/review/util-formatters';
+import { currencyFormat, ratingFormat } from '@bghoard/shared/util-formatters';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -51,7 +51,7 @@ export const ReviewFeatureDetails = ({gameId}: any) => {
       <p>{game.description}</p>
       <dl>
         <dt>Rating:</dt>
-        <dd>{game.rating ? ratingFormat(game.rating) : 0}</dd>
+        <dd>{game && game.rating ? ratingFormat(game.rating, 5) : '?'}</dd>
         <br />
         <dt>Price:</dt>
         <dd>{currencyFormat(game.price)}</dd>
@@ -101,7 +101,7 @@ export const ReviewFeatureDetails = ({gameId}: any) => {
           style={{ borderBottom: 'solid 1px #ccc', marginLeft: '1em' }}
         >
           <p>
-            <strong>{ratingFormat(review.rating)}</strong>
+            <strong>{game && game.rating ? ratingFormat(game.rating, 5) : '?'}</strong>
           </p>
           <p>{review.content}</p>
         </article>
